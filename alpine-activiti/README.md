@@ -21,13 +21,13 @@ Current Version: **current**
 Pull the latest version of the image from the docker index. This is the recommended method of installation as it is easier to update image in the future. These builds are performed by the **Docker Trusted Build** service.
 
 ```bash
-docker pull eternnoir/activiti:latest
+docker pull zaibaiman/alpine-activiti:latest
 ```
 
 Since version `latest`, the image builds are being tagged. You can now pull a particular version of activiti by specifying the version number. For example,
 
 ```bash
-docker pull eternnoir/activiti:5.16.4
+docker pull zaibaiman/alpine-activiti:5.16.4
 ```
 
 Alternately you can build the image yourself.
@@ -45,9 +45,7 @@ Run the activiti image
 ```bash
 docker run --name='activiti' -it --rm \
 -p 8080:8080 \
--v /var/run/docker.sock:/run/docker.sock \
--v $(which docker):/bin/docker \
-eternnoir/activiti:latest
+zaibaiman/alpine-activiti:latest
 ```
 
 Point your browser to `http://localhost:8080` and login using the default username and password:
@@ -85,7 +83,7 @@ We are now ready to start the Activiti application.
 ```bash
 docker run --name=activiti -d \
   -e 'DB_HOST=192.0.2.1’ -e 'DB_NAME=activiti_production' -e 'DB_USER=activiti’ -e 'DB_PASS=password' \
-eternnoir/activiti:latest
+zaibaiman/alpine-activiti:latest
 ```
 
 #### Linking to MySQL Container
@@ -126,7 +124,7 @@ We are now ready to start the Activiti application.
 
 ```bash
 docker run --name=activiti -d --link mysql:mysql \
-  eternnoir/activiti:latest
+  zaibaiman/alpine-activiti:latest
 ```
 
 The image will automatically fetch the `DB_NAME`, `DB_USER` and `DB_PASS` variables from the mysql container using the magic of docker links and works with the following images:
