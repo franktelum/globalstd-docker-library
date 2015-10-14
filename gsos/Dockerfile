@@ -11,7 +11,8 @@ RUN npm install -g nodemon
 WORKDIR /gsos
 
 # Clonar código fuente
-RUN git clone https://github.com/franktelum/gsos.git
+RUN apk add --update git
+RUN git clone https://github.com/franktelum/gsos.git .
 
 WORKDIR /gsos/src
 
