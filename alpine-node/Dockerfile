@@ -7,7 +7,7 @@ ENV VERSION=v4.2.1
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
 
-RUN apk add --update curl make gcc g++ python linux-headers paxctl libgcc libstdc++ \
+RUN apk add --update bash curl make gcc g++ python linux-headers paxctl libgcc libstdc++ \
       && curl -sSL https://nodejs.org/dist/${VERSION}/node-${VERSION}.tar.gz | tar -xz \
       && cd /node-${VERSION} \
       && ./configure --prefix=/usr ${CONFIG_FLAGS} \
