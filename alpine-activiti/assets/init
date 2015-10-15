@@ -47,8 +47,7 @@ case "${DB_TYPE}" in mysql)
     sed 's/{{DB_PASS}}/'"${DB_PASS}"'/g' -i /assets/config/db.properties
     cp -f /assets/config/db.properties /opt/tomcat/webapps/activiti-rest/WEB-INF/classes
     cp -f /assets/config/db.properties /opt/tomcat/webapps/activiti-explorer/WEB-INF/classes
-    cp -f /assets/config/engine.properties /opt/tomcat/webapps/activiti-rest/WEB-INF/classes
-    cp -f /assets/config/engine.properties /opt/tomcat/webapps/activiti-explorer/WEB-INF/classes
+    cp -f /assets/config/activiti-standalone-context.xml /opt/tomcat/webapps/activiti-rest/WEB-INF/
     ;;
 esac
 
