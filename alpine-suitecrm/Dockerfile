@@ -1,5 +1,5 @@
 FROM alpine:edge
-MAINTAINER Christoph Wiechert <wio@psitrax.de>
+MAINTAINER Francisco Mendoza "software@globalstd.com"
 
 ENV DOWNLOAD_URL http://iweb.dl.sourceforge.net/project/suitecrm/suitecrm-7.3.1.zip
 ENV DOWNLOAD_FILE suitecrm-7.3.1-max.zip
