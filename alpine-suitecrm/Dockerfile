@@ -1,5 +1,5 @@
 FROM alpine:edge
-MAINTAINER Francisco Mendoza "software@globalstd.com"
+MAINTAINER Francisco Mendoza <software@globalstd.com>
 
 ENV DOWNLOAD_URL http://iweb.dl.sourceforge.net/project/suitecrm/suitecrm-7.3.1.zip
 ENV DOWNLOAD_FILE suitecrm-7.3.1-max.zip
@@ -31,7 +31,11 @@ RUN curl "${DOWNLOAD_URL}" > $DOWNLOAD_FILE && \
   cp -v -R ${EXTRACT_FOLDER}/* ${WWW_FOLDER}
 
 ADD files/php.ini /etc/php/php.ini
-# ADD files/config_override.php ${WWW_FOLDER}/config_override.php
+ADD files/config_override.php ${WWW_FOLDER}/config_override.php
+ADD files/view.modulefield.php ${WWW_FOLDER}/modules/ModuleBuilder/views/view.modulefield.php
+
+ADD crons.conf /root/crons.conf
+RUN crontab /root/crons.conf
 
 EXPOSE 80
 
