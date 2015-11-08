@@ -34,7 +34,7 @@ ADD files/php.ini /etc/php/php.ini
 ADD files/config_override.php ${WWW_FOLDER}/config_override.php
 ADD files/view.modulefield.php ${WWW_FOLDER}/modules/ModuleBuilder/views/view.modulefield.php
 
-ADD crons.conf /root/crons.conf
+ADD files/crons.conf /root/crons.conf
 RUN crontab /root/crons.conf
 
 EXPOSE 80
