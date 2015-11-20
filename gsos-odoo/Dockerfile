@@ -42,6 +42,7 @@ RUN mkdir -p /mnt/extra-addons \
 # Clone gsos
 RUN git clone https://github.com/franktelum/gsos-odoo-addon.git /mnt/extra-addons/gsos
 
+
 VOLUME ["/var/lib/odoo", "/mnt/extra-addons"]
 
 # Expose Odoo services
